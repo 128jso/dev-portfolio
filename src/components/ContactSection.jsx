@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Mail, Send, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2 } from 'lucide-react';
 import { GithubIcon } from './GithubIcon';
+import { LinkedinIcon } from './LinkedinIcon';
 import confetti from 'canvas-confetti';
 import { DEVELOPER_PROFILE } from '../data/githubData';
 
@@ -27,17 +28,43 @@ export default function ContactSection() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.35rem' }}>
               <Mail size={18} color="var(--accent-purple-light)" />
               <span style={{ fontSize: '0.82rem', fontWeight: 700, color: 'var(--accent-purple-light)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                Get In Touch
+                Contact & Connect
               </span>
             </div>
             <h2 style={{ fontSize: '2rem', fontWeight: 800, color: '#fff', marginBottom: '1rem' }}>
-              Let's Build Together
+              Let's Connect
             </h2>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-              Interested in collaborating, discussing agentic AI architecture, full-stack development, or engineering opportunities? Drop a message below!
+              Open to Software Engineering roles, scalable data platform architecture, and AI-assisted development discussions. Feel free to reach out directly or send a message below!
             </p>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <a 
+                href={`mailto:${DEVELOPER_PROFILE.email}`} 
+                className="clean-card"
+                style={{ padding: '0.85rem 1rem', textDecoration: 'none', color: '#fff', display: 'flex', alignItems: 'center', gap: '0.75rem' }}
+              >
+                <Mail size={18} color="var(--accent-purple-light)" />
+                <div>
+                  <div style={{ fontSize: '0.88rem', fontWeight: 700 }}>{DEVELOPER_PROFILE.email}</div>
+                  <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Direct Email Inquiry</div>
+                </div>
+              </a>
+
+              <a 
+                href={DEVELOPER_PROFILE.linkedinUrl} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="clean-card"
+                style={{ padding: '0.85rem 1rem', textDecoration: 'none', color: '#fff', display: 'flex', alignItems: 'center', gap: '0.75rem' }}
+              >
+                <LinkedinIcon size={18} />
+                <div>
+                  <div style={{ fontSize: '0.88rem', fontWeight: 700 }}>LinkedIn Profile</div>
+                  <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>linkedin.com/in/johnhyunso</div>
+                </div>
+              </a>
+
               <a 
                 href={DEVELOPER_PROFILE.githubUrl} 
                 target="_blank" 
@@ -45,12 +72,20 @@ export default function ContactSection() {
                 className="clean-card"
                 style={{ padding: '0.85rem 1rem', textDecoration: 'none', color: '#fff', display: 'flex', alignItems: 'center', gap: '0.75rem' }}
               >
-                <GithubIcon size={20} color="var(--accent-purple-light)" />
+                <GithubIcon size={18} color="var(--accent-purple-light)" />
                 <div>
                   <div style={{ fontSize: '0.88rem', fontWeight: 700 }}>GitHub Profile</div>
-                  <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>github.com/128jso</div>
+                  <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>github.com/128jso</div>
                 </div>
               </a>
+
+              <div className="clean-card" style={{ padding: '0.85rem 1rem', color: '#fff', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                <MapPin size={18} color="#34d399" />
+                <div>
+                  <div style={{ fontSize: '0.88rem', fontWeight: 700 }}>{DEVELOPER_PROFILE.location}</div>
+                  <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Location</div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -61,7 +96,7 @@ export default function ContactSection() {
                 <CheckCircle2 size={48} color="var(--accent-emerald)" style={{ margin: '0 auto 1rem auto' }} />
                 <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#fff', marginBottom: '0.5rem' }}>Message Sent!</h3>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '1.25rem' }}>
-                  Thank you for reaching out. I'll get back to you shortly.
+                  Thank you for reaching out. John will get back to you shortly.
                 </p>
                 <button onClick={() => { setFormSubmitted(false); setFormData({ name: '', email: '', message: '' }); }} className="btn-secondary">
                   Send Another Message
@@ -103,7 +138,7 @@ export default function ContactSection() {
                 </div>
 
                 <button type="submit" className="btn-primary" style={{ justifyContent: 'center', padding: '0.8rem' }}>
-                  <Send size={16} /> Send Inquiry Message
+                  <Send size={16} /> Send Direct Inquiry Message
                 </button>
               </form>
             )}

@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Bot, Send, Sparkles, X, MessageSquare, ChevronDown, CheckCircle2 } from 'lucide-react';
 import { GithubIcon } from './GithubIcon';
-import { DEVELOPER_PROFILE, PROJECTS_DATABASE } from '../data/githubData';
+import { DEVELOPER_PROFILE, PROJECTS_DATABASE, EXPERIENCE_TIMELINE } from '../data/githubData';
 
 // Helper for formatted text rendering
 const renderFormattedText = (text) => {
@@ -38,7 +38,7 @@ export default function AiAssistantChat() {
     {
       id: 1,
       sender: 'ai',
-      text: `Hello! I am **128jso's Portfolio AI Assistant**.\n\nAsk me anything about **128jso's 4 public GitHub repositories**, agentic AI architectures, TypeScript tools, Java games, or skills!`,
+      text: `Hello! I am **John So's Portfolio AI Assistant**.\n\nAsk me anything about John's **4+ years at Nordstrom**, $115M+ Marketplace platform delivery, AWS & Java tech stack, or GitHub repositories!`,
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     }
   ]);
@@ -70,12 +70,20 @@ export default function AiAssistantChat() {
       const lower = text.toLowerCase();
       let responseMsg = {};
 
-      if (lower.includes('aura') || lower.includes('fitness') || lower.includes('agent')) {
+      if (lower.includes('nordstrom') || lower.includes('experience') || lower.includes('work') || lower.includes('history')) {
+        responseMsg = {
+          id: Date.now() + 1,
+          sender: 'ai',
+          text: `💼 **John So's Career Experience at Nordstrom:**\n\n• **Software Engineer II (Sep 2024 – Present)**: Architected Nordstrom's PIM foundational platform (PostgreSQL, Docker) eliminating downtime; built foundational data service using AI-assisted development (100% QA pass rate); led SIT for zero-incident launch.\n• **Software Engineer I (Jul 2022 – Sep 2024)**: Directed delivery of Mirakl Marketplace driving **$115M+ in demand** (*won Nordstrom Delivery of the Year*); decoupled legacy cache reducing egress costs by **$50K+/year**.\n• **University of Washington, Brunton Lab (2018 – 2020)**: Accelerated neuroscience data analysis pipelines by 70% using Python (pandas, NumPy), contributing to 4 academic papers.`,
+          timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        };
+      }
+      else if (lower.includes('aura') || lower.includes('fitness') || lower.includes('agent')) {
         const auraProj = PROJECTS_DATABASE.find(p => p.id === 'aura-fitness-agent');
         responseMsg = {
           id: Date.now() + 1,
           sender: 'ai',
-          text: `Here is **128jso's** flagship Agentic AI project surface:`,
+          text: `Here is John So's flagship Agentic AI project surface:`,
           a2uiCard: {
             title: auraProj.title,
             tagline: auraProj.tagline,
@@ -86,43 +94,27 @@ export default function AiAssistantChat() {
           timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
         };
       }
-      else if (lower.includes('bible') || lower.includes('memory') || lower.includes('scripture')) {
-        responseMsg = {
-          id: Date.now() + 1,
-          sender: 'ai',
-          text: `📖 **Bible Memory** (\`bible-memory\`) is a **TypeScript spaced-repetition learning app** by **128jso**!\n\n• **Purpose**: Scripture memorization via active recall algorithms & flashcards\n• **Tech Stack**: TypeScript, React, Spaced-Repetition Algorithm Logic\n• **Code**: [bible-memory on GitHub](https://github.com/128jso/bible-memory)`,
-          timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-        };
-      }
-      else if (lower.includes('game') || lower.includes('family') || lower.includes('business')) {
-        responseMsg = {
-          id: Date.now() + 1,
-          sender: 'ai',
-          text: `🎮 **Family Business** (\`FamilyBusiness\`) is a **Java-based strategy & management game** created by **128jso**!\n\n• **Genre**: Strategy / Business Simulation Game\n• **Core Engine**: Custom Java object-oriented game loop & state architecture\n• **Features**: Player resource management & transactional game loops.\n• **Code**: [FamilyBusiness on GitHub](https://github.com/128jso/FamilyBusiness)`,
-          timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-        };
-      }
       else if (lower.includes('stack') || lower.includes('skills') || lower.includes('language') || lower.includes('tech')) {
         responseMsg = {
           id: Date.now() + 1,
           sender: 'ai',
-          text: `🛠️ **128jso's Primary Technical Stack:**\n\n• **AI & Agentic Systems**: Google ADK (Python), Vertex AI Agent Runtime, Memory Bank, A2UI v0.8, GenAI Tools & Sandbox Code Execution.\n• **Frontend & UI**: React.js, Vite, TypeScript, JavaScript (ES6+), Glassmorphism.\n• **Backend & Cloud**: Python, Node.js/Express, Java (OOP), Cloud Firestore, Google Cloud Storage (GCS).\n• **GitHub Repos**: 4 public repositories spanning AI agents, TypeScript learning tools, web apps, and Java games.`,
+          text: `🛠️ **John So's Technical Stack:**\n\n• **Languages**: Java, Go, Python, SQL, JavaScript, TypeScript\n• **Frameworks**: Spring Boot, React.js, Node.js, Pandas, Maven\n• **Cloud & DevOps**: AWS (EC2, Lambda, S3, DynamoDB), Terraform, Docker, Kubernetes, Kafka, CI/CD, GitLab\n• **Databases & System Design**: PostgreSQL, MySQL, DynamoDB, MongoDB, Schema Design, Scalability & Caching, OOP Design`,
           timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
         };
       }
-      else if (lower.includes('project') || lower.includes('repos') || lower.includes('work') || lower.includes('other')) {
+      else if (lower.includes('education') || lower.includes('uw') || lower.includes('degree') || lower.includes('university')) {
         responseMsg = {
           id: Date.now() + 1,
           sender: 'ai',
-          text: `📁 **128jso's 4 Public GitHub Repositories:**\n\n1. **AURA Fitness AI** (\`aura-fitness-agent\`): Flagship Agentic AI fitness workspace.\n2. **Bible Memory** (\`bible-memory\`): TypeScript spaced-repetition scripture app.\n3. **Emaily** (\`Emaily\`): Full-stack email survey & feedback web app.\n4. **Family Business** (\`FamilyBusiness\`): Java strategy & management game.\n\nCheck out GitHub: [github.com/128jso](https://github.com/128jso)!`,
+          text: `🎓 **Education:**\n\n• **University of Washington** (Seattle, WA)\n• **Degree**: B.A. in Mathematics (Sep 2017 – Jun 2021)\n• **Research**: Neuroscience/Computer Science Research Assistant at Brunton Lab (contributed to 4 academic papers).`,
           timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
         };
       }
-      else if (lower.includes('contact') || lower.includes('hire') || lower.includes('email') || lower.includes('reach')) {
+      else if (lower.includes('contact') || lower.includes('hire') || lower.includes('email') || lower.includes('linkedin') || lower.includes('phone')) {
         responseMsg = {
           id: Date.now() + 1,
           sender: 'ai',
-          text: `📫 **How to Connect with 128jso:**\n\n• **GitHub**: [github.com/128jso](https://github.com/128jso)\n• **Contact**: Use the contact form on this page to send a message!\n• **Open to**: Full-Stack Engineering, AI Systems, and Agentic AI roles.`,
+          text: `📫 **Contact Information for John So:**\n\n• **Location**: Seattle, WA\n• **Email**: [johnhyunso@gmail.com](mailto:johnhyunso@gmail.com)\n• **Phone**: (702) 245-3161\n• **LinkedIn**: [linkedin.com/in/johnhyunso](https://linkedin.com/in/johnhyunso)\n• **GitHub**: [github.com/128jso](https://github.com/128jso)`,
           timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
         };
       }
@@ -130,7 +122,7 @@ export default function AiAssistantChat() {
         responseMsg = {
           id: Date.now() + 1,
           sender: 'ai',
-          text: `✨ **128jso** is a **Full-Stack & AI Systems Engineer**.\n\nFeatured Projects: **AURA Fitness AI** (\`aura-fitness-agent\`), **Bible Memory** (\`bible-memory\`), **Family Business Game** (\`FamilyBusiness\`), and **Emaily** (\`Emaily\`).\n\nAsk me about **128jso's projects**, **tech stack**, or **how to connect**!`,
+          text: `✨ **John So** is a **Software Engineer II** based in Seattle, WA with 4+ years experience building scalable data platforms at Nordstrom ($115M+ Marketplace demand).\n\nAsk me about **John's Nordstrom experience**, **AWS/Java tech stack**, **education**, or **contact info**!`,
           timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
         };
       }
@@ -178,10 +170,10 @@ export default function AiAssistantChat() {
                 <Bot size={16} />
               </div>
               <div>
-                <h4 style={{ fontSize: '0.92rem', fontWeight: 800, color: '#fff', lineHeight: 1.2 }}>AI Portfolio Assistant</h4>
+                <h4 style={{ fontSize: '0.92rem', fontWeight: 800, color: '#fff', lineHeight: 1.2 }}>AI Assistant</h4>
                 <span style={{ fontSize: '0.68rem', color: '#34d399', display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
                   <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#34d399', display: 'inline-block' }}></span>
-                  Online • Ask About 128jso
+                  Online • Ask About John So
                 </span>
               </div>
             </div>
@@ -242,10 +234,11 @@ export default function AiAssistantChat() {
           {/* Quick Prompts Bar */}
           <div style={{ display: 'flex', gap: '0.3rem', overflowX: 'auto', padding: '0.4rem 0.85rem', borderTop: '1px solid var(--border-subtle)' }}>
             {[
+              "💼 Nordstrom Experience",
               "🤖 AURA Fitness AI",
-              "📖 Bible Memory",
-              "🎮 Family Business",
-              "🛠️ Tech Stack"
+              "🛠️ Tech Stack",
+              "🎓 Education & UW",
+              "📫 Contact Info"
             ].map((prompt, i) => (
               <button
                 key={i}
@@ -262,7 +255,7 @@ export default function AiAssistantChat() {
           <div style={{ padding: '0.5rem', background: 'var(--bg-card)', borderTop: '1px solid var(--border-subtle)', display: 'flex', gap: '0.4rem' }}>
             <input
               type="text"
-              placeholder="Ask AI about 128jso..."
+              placeholder="Ask AI about John So..."
               value={inputMessage}
               onChange={(e) => setInputMessage(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}

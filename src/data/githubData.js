@@ -1,55 +1,68 @@
 export const DEVELOPER_PROFILE = {
-  name: "128jso",
-  title: "Full-Stack & AI Systems Engineer",
-  bio: "Specializing in Agentic AI Systems, Full-Stack Web Development, Multi-Agent Orchestration, and Cloud Native Architectures.",
+  name: "John So",
+  username: "128jso",
+  title: "Software Engineer II",
+  location: "Seattle, WA",
+  phone: "(702) 245-3161",
+  email: "johnhyunso@gmail.com",
+  linkedinUrl: "https://linkedin.com/in/johnhyunso",
   githubUrl: "https://github.com/128jso",
+  bio: "Software Engineer with 4+ years building scalable data platforms at Nordstrom, including the award-winning Marketplace delivery that generated $115M+ in demand. Known for technical leadership, AI-assisted development, and zero-incident production launches.",
   publicRepos: 4,
-  primaryLanguages: ["Python", "TypeScript", "JavaScript", "Java", "React"],
-  cloudPlatforms: ["Google Cloud Vertex AI", "Cloud Firestore", "Cloud Storage", "Cloud Run"]
+  primaryLanguages: ["Java", "Go", "Python", "SQL", "JavaScript", "TypeScript"],
+  cloudPlatforms: ["AWS (EC2, Lambda, S3, DynamoDB)", "Google Cloud Vertex AI", "Terraform", "Docker", "Kubernetes", "Apache Kafka"]
+};
+
+export const EDUCATION_DATA = {
+  institution: "University of Washington",
+  location: "Seattle, WA",
+  degree: "B.A., Mathematics",
+  period: "Sep 2017 – Jun 2021"
 };
 
 export const EXPERIENCE_TIMELINE = [
   {
-    id: "exp-1",
-    role: "Full-Stack & AI Systems Engineer",
-    company: "Agentic Systems & Independent Engineering",
-    period: "2024 - Present",
-    location: "Remote",
-    description: "Architecting agentic AI systems, multi-agent workflows, and cloud-native web applications utilizing Google ADK, Vertex AI, and modern React stacks.",
+    id: "nordstrom-se2",
+    role: "Software Engineer II",
+    company: "Nordstrom",
+    period: "Sep 2024 – Present",
+    location: "Seattle, WA",
+    description: "Leading architectural design, data platform scalability, and AI-assisted development for core enterprise retail data systems.",
     bullets: [
-      "Engineered AURA Fitness AI utilizing Google ADK, Vertex AI Memory Bank, Cloud Firestore, GCS, and A2UI schema v0.8.",
-      "Developed high-speed TypeScript web applications (Bible Memory) using spaced-repetition active recall algorithms.",
-      "Implemented Agent Engine Sandbox Code Execution for secure model-generated Python computation."
+      "Architected Nordstrom's PIM foundational platform (PostgreSQL, Docker), authoring ADRs and data models that eliminated system downtime and became the standard adopted team-wide.",
+      "Built and validated a foundational data management service using AI-assisted development, delivering a 40-case QA matrix with 100% pass rate.",
+      "Led discovery spikes and authored ADRs for a large-scale data migration, resolving legacy dependencies and delivering on schedule with zero data loss.",
+      "Owned end-to-end SIT for the PIM platform — designed automated test scripts, surfaced critical edge cases, and coordinated cross-team validation for a zero-incident launch."
     ],
-    skills: ["Google ADK", "Vertex AI", "Python", "React", "TypeScript", "Firestore"]
+    skills: ["PostgreSQL", "Docker", "Data Modeling", "AI-Assisted Dev", "ADRs", "System Design"]
   },
   {
-    id: "exp-2",
-    role: "Full-Stack Software Engineer",
-    company: "Web Systems & Cloud Applications",
-    period: "2022 - 2024",
-    location: "Remote",
-    description: "Built scalable web platforms, RESTful backend microservices, and interactive frontend interfaces.",
+    id: "nordstrom-se1",
+    role: "Software Engineer I",
+    company: "Nordstrom",
+    period: "Jul 2022 – Sep 2024",
+    location: "Seattle, WA",
+    description: "Directed technical delivery of key marketplace integrations, legacy cache optimizations, and multi-record parity analytics.",
     bullets: [
-      "Built Emaily full-stack survey campaign system using Node.js, Express, MongoDB, SendGrid, and Stripe integration.",
-      "Engineered Praise Workspace team recognition application with real-time UI state management.",
-      "Designed responsive client-side component design systems and state flows in React."
+      "Directed technical delivery of the Mirakl Marketplace initiative, applying OOP design across cross-functional teams — earning Nordstrom's Delivery of the Year award and driving $115M+ in demand.",
+      "Decoupled ID mapping from a legacy cache, reducing egress costs by $50K+ annually and improving system scalability.",
+      "Built the core BCA infrastructure — mappers and processors in PostgreSQL and Docker — enabling zero-incident integration between new and legacy systems.",
+      "Drove parity testing for Marketplace and NAP rollouts, analyzing 100K+ discrepancies across millions of records and delivering prioritized bug-fix roadmaps that maintained system reliability."
     ],
-    skills: ["Node.js", "Express", "MongoDB", "React", "JavaScript", "Stripe API"]
+    skills: ["Java", "OOP Design", "PostgreSQL", "Docker", "Parity Testing", "Cache Optimization"]
   },
   {
-    id: "exp-3",
-    role: "Software Developer (Java / OOP Systems)",
-    company: "Software Systems & Game Engine Development",
-    period: "2020 - 2022",
-    location: "Remote",
-    description: "Focused on core object-oriented software engineering, transaction state loops, and interactive Java engines.",
+    id: "uw-brunton-lab",
+    role: "Neuroscience / Computer Science Research Assistant",
+    company: "University of Washington, Brunton Lab",
+    period: "May 2018 – May 2020",
+    location: "Seattle, WA",
+    description: "Automated large-scale dataset retrieval and pose estimation data analysis for computational neuroscience models.",
     bullets: [
-      "Developed Family Business, a Java & Spring Boot strategic management game with custom entity and turn-based loops.",
-      "Applied Command, Factory, and Observer OOP design patterns for transactional game state processing.",
-      "Integrated Maven build automation and Spring Boot dependency injection logic."
+      "Automated data retrieval from large neuroscience datasets using Python (pandas, NumPy), accelerating the analysis pipeline by 70%.",
+      "Collected and analyzed 8,000+ data points for pose estimation models, contributing to 4 published academic papers."
     ],
-    skills: ["Java", "Spring Boot", "OOP", "Maven", "Game Engine Logic"]
+    skills: ["Python", "Pandas", "NumPy", "Data Pipelines", "Pose Estimation", "Academic Research"]
   }
 ];
 
@@ -128,15 +141,19 @@ export const PROJECTS_DATABASE = [
 
 export const SKILLS_MATRIX = [
   {
-    category: "AI & Agentic Systems",
-    skills: ["Google ADK (Python)", "Vertex AI Agent Runtime", "Memory Bank", "A2UI v0.8 Schema", "GenAI Tools & Callbacks", "RAG & Knowledge Retrieval"]
+    category: "Languages & Core",
+    skills: ["Java", "Go", "Python", "SQL", "JavaScript", "TypeScript"]
   },
   {
-    category: "Frontend & UI Systems",
-    skills: ["React.js", "Vite", "TypeScript", "JavaScript (ES6+)", "Vanilla CSS / Glassmorphism", "Lucide React"]
+    category: "Frameworks & Libraries",
+    skills: ["Spring Boot", "React.js", "Node.js / Express", "Pandas", "NumPy", "Maven"]
   },
   {
-    category: "Backend & Cloud Infrastructure",
-    skills: ["Python", "Node.js / Express", "Java (OOP / Game Dev)", "Cloud Firestore", "Google Cloud Storage (GCS)", "REST APIs & FastAPIs"]
+    category: "Cloud & DevOps",
+    skills: ["AWS (EC2, Lambda, S3, DynamoDB)", "Terraform", "Docker", "Kubernetes", "Apache Kafka", "CI/CD / GitLab"]
+  },
+  {
+    category: "Databases & System Design",
+    skills: ["PostgreSQL", "MySQL", "DynamoDB", "MongoDB", "Database Schema Design", "Scalability & Caching", "OOP & API Design"]
   }
 ];
