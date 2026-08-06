@@ -43,6 +43,9 @@ export default function Header() {
           <a href="#projects" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.88rem', fontWeight: 600 }}>
             Projects
           </a>
+          <a href="#experience" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.88rem', fontWeight: 600 }}>
+            Experience
+          </a>
           <a href="#tech-stack" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.88rem', fontWeight: 600 }}>
             Tech Stack
           </a>

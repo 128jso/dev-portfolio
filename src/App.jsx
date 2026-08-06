@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import ProjectsShowcase from './components/ProjectsShowcase';
+import ExperienceTimeline from './components/ExperienceTimeline';
 import TechStack from './components/TechStack';
 import AiAssistantChat from './components/AiAssistantChat';
 import ContactSection from './components/ContactSection';
@@ -14,6 +15,7 @@ export default function App() {
       <main style={{ flex: 1 }}>
         <Hero />
         <ProjectsShowcase />
+        <ExperienceTimeline />
         <TechStack />
         <AiAssistantChat />
         <ContactSection />

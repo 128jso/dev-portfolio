@@ -8,6 +8,51 @@ export const DEVELOPER_PROFILE = {
   cloudPlatforms: ["Google Cloud Vertex AI", "Cloud Firestore", "Cloud Storage", "Cloud Run"]
 };
 
+export const EXPERIENCE_TIMELINE = [
+  {
+    id: "exp-1",
+    role: "Full-Stack & AI Systems Engineer",
+    company: "Agentic Systems & Independent Engineering",
+    period: "2024 - Present",
+    location: "Remote",
+    description: "Architecting agentic AI systems, multi-agent workflows, and cloud-native web applications utilizing Google ADK, Vertex AI, and modern React stacks.",
+    bullets: [
+      "Engineered AURA Fitness AI utilizing Google ADK, Vertex AI Memory Bank, Cloud Firestore, GCS, and A2UI schema v0.8.",
+      "Developed high-speed TypeScript web applications (Bible Memory) using spaced-repetition active recall algorithms.",
+      "Implemented Agent Engine Sandbox Code Execution for secure model-generated Python computation."
+    ],
+    skills: ["Google ADK", "Vertex AI", "Python", "React", "TypeScript", "Firestore"]
+  },
+  {
+    id: "exp-2",
+    role: "Full-Stack Software Engineer",
+    company: "Web Systems & Cloud Applications",
+    period: "2022 - 2024",
+    location: "Remote",
+    description: "Built scalable web platforms, RESTful backend microservices, and interactive frontend interfaces.",
+    bullets: [
+      "Built Emaily full-stack survey campaign system using Node.js, Express, MongoDB, SendGrid, and Stripe integration.",
+      "Engineered Praise Workspace team recognition application with real-time UI state management.",
+      "Designed responsive client-side component design systems and state flows in React."
+    ],
+    skills: ["Node.js", "Express", "MongoDB", "React", "JavaScript", "Stripe API"]
+  },
+  {
+    id: "exp-3",
+    role: "Software Developer (Java / OOP Systems)",
+    company: "Software Systems & Game Engine Development",
+    period: "2020 - 2022",
+    location: "Remote",
+    description: "Focused on core object-oriented software engineering, transaction state loops, and interactive Java engines.",
+    bullets: [
+      "Developed Family Business, a Java & Spring Boot strategic management game with custom entity and turn-based loops.",
+      "Applied Command, Factory, and Observer OOP design patterns for transactional game state processing.",
+      "Integrated Maven build automation and Spring Boot dependency injection logic."
+    ],
+    skills: ["Java", "Spring Boot", "OOP", "Maven", "Game Engine Logic"]
+  }
+];
+
 export const PROJECTS_DATABASE = [
   {
     id: "aura-fitness-agent",
