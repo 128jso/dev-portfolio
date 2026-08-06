@@ -2,6 +2,7 @@ import React from 'react';
 import { Sparkles, Bot, ArrowRight, MapPin, Award } from 'lucide-react';
 import { GithubIcon } from './GithubIcon';
 import { LinkedinIcon } from './LinkedinIcon';
+import FormattedText from './FormattedText';
 import { DEVELOPER_PROFILE } from '../data/githubData';
 
 export default function Hero() {
@@ -37,7 +38,7 @@ export default function Hero() {
         </h1>
 
         <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', maxWidth: '820px', marginBottom: '1.75rem', lineHeight: 1.6 }}>
-          {DEVELOPER_PROFILE.bio}
+          <FormattedText text={DEVELOPER_PROFILE.bio} />
         </p>
 
         {/* CTA Buttons */}

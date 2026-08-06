@@ -1,35 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Bot, Send, Sparkles, X, MessageSquare, ChevronDown, CheckCircle2 } from 'lucide-react';
+import { Bot, Send, Sparkles, X, ChevronDown, CheckCircle2 } from 'lucide-react';
 import { GithubIcon } from './GithubIcon';
+import FormattedText from './FormattedText';
 import { DEVELOPER_PROFILE, PROJECTS_DATABASE, EXPERIENCE_TIMELINE } from '../data/githubData';
-
-// Helper for formatted text rendering
-const renderFormattedText = (text) => {
-  if (!text) return null;
-  const lines = text.split('\n');
-  return lines.map((line, lineIdx) => {
-    const regex = /(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`)/g;
-    const tokens = line.split(regex);
-    const formattedTokens = tokens.map((part, tokenIdx) => {
-      if (part.startsWith('**') && part.endsWith('**')) {
-        return <strong key={tokenIdx} style={{ fontWeight: 700, color: '#fff' }}>{part.slice(2, -2)}</strong>;
-      }
-      if (part.startsWith('*') && part.endsWith('*')) {
-        return <em key={tokenIdx} style={{ fontStyle: 'italic', color: 'var(--accent-purple-light)' }}>{part.slice(1, -1)}</em>;
-      }
-      if (part.startsWith('`') && part.endsWith('`')) {
-        return <code key={tokenIdx} style={{ background: 'rgba(255,255,255,0.08)', padding: '0.1rem 0.3rem', borderRadius: '4px', color: 'var(--accent-purple-light)', fontFamily: 'var(--font-code)', fontSize: '0.85em' }}>{part.slice(1, -1)}</code>;
-      }
-      return part;
-    });
-    return (
-      <React.Fragment key={lineIdx}>
-        {formattedTokens}
-        {lineIdx < lines.length - 1 && <br />}
-      </React.Fragment>
-    );
-  });
-};
 
 export default function AiAssistantChat() {
   const [isOpen, setIsOpen] = useState(false);
@@ -196,7 +169,7 @@ export default function AiAssistantChat() {
                   color: '#fff'
                 }}>
                   <div style={{ fontSize: '0.85rem', lineHeight: 1.45 }}>
-                    {renderFormattedText(msg.text)}
+                    <FormattedText text={msg.text} />
                   </div>
 
                   {/* A2UI Card Inside Popout */}

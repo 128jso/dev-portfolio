@@ -1,5 +1,6 @@
 import React from 'react';
-import { Briefcase, Calendar, MapPin, CheckCircle2, GraduationCap, Award } from 'lucide-react';
+import { Briefcase, Calendar, MapPin, CheckCircle2, GraduationCap } from 'lucide-react';
+import FormattedText from './FormattedText';
 import { EXPERIENCE_TIMELINE, EDUCATION_DATA } from '../data/githubData';
 
 export default function ExperienceTimeline() {
@@ -61,7 +62,7 @@ export default function ExperienceTimeline() {
               </div>
 
               <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.5, marginBottom: '1rem' }}>
-                {item.description}
+                <FormattedText text={item.description} />
               </p>
 
               {/* Bullet Highlights */}
@@ -69,7 +70,7 @@ export default function ExperienceTimeline() {
                 {item.bullets.map((b, bIdx) => (
                   <div key={bIdx} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.45rem', fontSize: '0.88rem', color: 'var(--text-primary)', lineHeight: 1.5 }}>
                     <CheckCircle2 size={15} color="var(--accent-purple-light)" style={{ flexShrink: 0, marginTop: '3px' }} />
-                    <span>{b}</span>
+                    <FormattedText text={b} />
                   </div>
                 ))}
               </div>
