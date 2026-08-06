@@ -32,7 +32,11 @@
   --bg-card-hover: #23262e;
   --accent-purple: #8b5cf6;
   --accent-purple-light: #c084fc;
+  --text-primary: #f3f4f6;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
   --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-subtle-hover: rgba(255, 255, 255, 0.16);
 }
 
 /* Theme 2: Cyber Violet */
@@ -43,7 +47,11 @@
   --bg-card-hover: #202036;
   --accent-purple: #c084fc;
   --accent-purple-light: #e9d5ff;
+  --text-primary: #f3f4f6;
+  --text-secondary: #a78bfa;
+  --text-muted: #6b7280;
   --border-subtle: rgba(192, 132, 252, 0.2);
+  --border-subtle-hover: rgba(192, 132, 252, 0.35);
 }
 
 /* Theme 3: Obsidian Emerald */
@@ -54,7 +62,11 @@
   --bg-card-hover: #1b302c;
   --accent-purple: #10b981;
   --accent-purple-light: #34d399;
+  --text-primary: #f3f4f6;
+  --text-secondary: #a7f3d0;
+  --text-muted: #6b7280;
   --border-subtle: rgba(16, 185, 129, 0.2);
+  --border-subtle-hover: rgba(16, 185, 129, 0.35);
 }
 
 /* Theme 4: Neon Sunset */
@@ -65,7 +77,27 @@
   --bg-card-hover: #301b2c;
   --accent-purple: #f43f5e;
   --accent-purple-light: #fb7185;
+  --text-primary: #f3f4f6;
+  --text-secondary: #fecdd3;
+  --text-muted: #6b7280;
   --border-subtle: rgba(244, 63, 94, 0.2);
+  --border-subtle-hover: rgba(244, 63, 94, 0.35);
+}
+
+/* Theme 5: Minimalist Light Palette */
+[data-theme="minimalist-light"] {
+  --bg-main: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-card: #f1f5f9;
+  --bg-card-hover: #e2e8f0;
+  --accent-purple: #7c3aed;
+  --accent-purple-light: #6d28d9;
+  --accent-indigo: #4338ca;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-subtle-hover: rgba(0, 0, 0, 0.16);
 }
 
 * {
@@ -95,7 +127,7 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   transition: all 0.25s ease;
 }
 
@@ -112,13 +144,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .clean-card:hover {
   background: var(--bg-card-hover);
-  border-color: rgba(255, 255, 255, 0.18);
+  border-color: var(--border-subtle-hover);
   transform: translateY(-2px);
 }
 
 /* Badges & Pills */
 .pill-badge {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(0, 0, 0, 0.04);
   border: 1px solid var(--border-subtle);
   color: var(--text-secondary);
   font-size: 0.78rem;
@@ -131,15 +163,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pill-badge-purple {
-  background: rgba(139, 92, 246, 0.12);
-  border-color: rgba(139, 92, 246, 0.35);
+  background: rgba(124, 58, 237, 0.12);
+  border-color: rgba(124, 58, 237, 0.35);
   color: var(--accent-purple-light);
 }
 
 .pill-badge-emerald {
   background: rgba(16, 185, 129, 0.12);
   border-color: rgba(16, 185, 129, 0.35);
-  color: #34d399;
+  color: #059669;
 }
 
 /* Buttons */
@@ -157,16 +189,16 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 0.45rem;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.25);
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.25);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--bg-card);
   color: var(--text-primary);
   border: 1px solid var(--border-subtle);
   font-family: var(--font-body);
@@ -182,7 +214,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--bg-card-hover);
   border-color: var(--border-subtle-hover);
   transform: translateY(-1px);
 }
@@ -216,7 +248,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.12);
+  background: var(--border-subtle-hover);
   border-radius: 3px;
 }
 

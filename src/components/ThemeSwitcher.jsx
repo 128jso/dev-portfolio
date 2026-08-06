@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Palette, Moon, Sun, Sparkles } from 'lucide-react';
+import { Palette, Sun, Moon, Sparkles } from 'lucide-react';
 
 export const THEMES = [
   {
@@ -8,31 +8,39 @@ export const THEMES = [
     accent: '#8b5cf6',
     bg: '#0f1115',
     card: '#1c1e24',
-    border: 'rgba(255, 255, 255, 0.08)'
+    isLight: false
   },
   {
     id: 'cyber-violet',
     name: 'Cyber Violet',
     accent: '#c084fc',
     bg: '#0a0a10',
-    card: '#141420',
-    border: 'rgba(192, 132, 252, 0.18)'
+    card: '#18182a',
+    isLight: false
   },
   {
     id: 'obsidian-emerald',
     name: 'Obsidian Emerald',
     accent: '#10b981',
-    bg: '#0b1311',
-    card: '#131f1c',
-    border: 'rgba(16, 185, 129, 0.18)'
+    bg: '#070d0b',
+    card: '#142421',
+    isLight: false
   },
   {
     id: 'matrix-sunset',
     name: 'Neon Sunset',
     accent: '#f43f5e',
-    bg: '#120b10',
-    card: '#1f131a',
-    border: 'rgba(244, 63, 94, 0.18)'
+    bg: '#12090e',
+    card: '#241421',
+    isLight: false
+  },
+  {
+    id: 'minimalist-light',
+    name: 'Minimalist Light',
+    accent: '#7c3aed',
+    bg: '#f8fafc',
+    card: '#f1f5f9',
+    isLight: true
   }
 ];
 
@@ -64,15 +72,15 @@ export default function ThemeSwitcher() {
           border: '1px solid var(--border-subtle)',
           borderRadius: '12px',
           padding: '0.65rem',
-          boxShadow: '0 10px 30px rgba(0,0,0,0.6)',
+          boxShadow: '0 10px 30px rgba(0,0,0,0.25)',
           zIndex: 200,
-          width: '200px',
+          width: '210px',
           display: 'flex',
           flexDirection: 'column',
           gap: '0.35rem'
         }}>
           <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--text-muted)', marginBottom: '0.2rem', paddingLeft: '0.35rem' }}>
-            SELECT PORTFOLIO THEME
+            SELECT PORTFOLIO PALETTE
           </div>
           {THEMES.map(t => (
             <button
@@ -87,16 +95,16 @@ export default function ThemeSwitcher() {
                 justifyContent: 'space-between',
                 padding: '0.45rem 0.65rem',
                 borderRadius: '8px',
-                background: currentTheme === t.id ? 'rgba(255, 255, 255, 0.08)' : 'transparent',
+                background: currentTheme === t.id ? 'var(--border-subtle-hover)' : 'transparent',
                 border: 'none',
-                color: '#fff',
+                color: 'var(--text-primary)',
                 cursor: 'pointer',
                 fontSize: '0.82rem',
                 fontWeight: currentTheme === t.id ? 700 : 500
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span style={{ width: '12px', height: '12px', borderRadius: '50%', background: t.accent }}></span>
+                {t.isLight ? <Sun size={13} color={t.accent} /> : <span style={{ width: '12px', height: '12px', borderRadius: '50%', background: t.accent }}></span>}
                 <span>{t.name}</span>
               </div>
               {currentTheme === t.id && <Sparkles size={12} color={t.accent} />}
